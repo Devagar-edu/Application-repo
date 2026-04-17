@@ -29,7 +29,7 @@ concurrency:
 jobs:
   scan-and-triage:
     name: Snyk → Normalise → Jira
-    runs-on: self-hosted          # change to ubuntu-latest if not using self-hosted
+    runs-on: ubuntu-latest         # change to ubuntu-latest if not using self-hosted
     permissions:
       contents: read
       security-events: write
