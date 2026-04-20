@@ -13,6 +13,7 @@
 #   JIRA_PROJECT_KEY
 #   SNYK_TOKEN
 
+
 name: Vulnerability Scan and Triage
 
 on:
