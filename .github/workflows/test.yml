@@ -94,7 +94,7 @@ jobs:
       - name: Normalise SCA output
         env:
           GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_MODELS_TOKEN: ${{ secrets.GITHUB_MODELS_TOKEN }}
+          GITHUB_MODELS_TOKEN: ${{ secrets.ORG_GITHUB_TOKEN }}
           GITHUB_ORG:          ${{ secrets.ORG_NAME }}
           GOVERNANCE_REPO:     ${{ secrets.GOVERNANCE_REPO }}
           JIRA_URL:            ${{ secrets.JIRA_URL }}
@@ -113,7 +113,7 @@ jobs:
       - name: Normalise SAST output
         env:
           GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_MODELS_TOKEN: ${{ secrets.GITHUB_MODELS_TOKEN }}
+          GITHUB_MODELS_TOKEN: ${{ secrets.ORG_GITHUB_TOKEN }}
           GITHUB_ORG:          ${{ secrets.ORG_NAME }}
           GOVERNANCE_REPO:     ${{ secrets.GOVERNANCE_REPO }}
           JIRA_URL:            ${{ secrets.JIRA_URL }}
@@ -163,7 +163,7 @@ jobs:
       - name: Create or update Jira issues
         env:
           GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_MODELS_TOKEN: ${{ secrets.GITHUB_MODELS_TOKEN }}
+          GITHUB_MODELS_TOKEN: ${{ secrets.ORG_GITHUB_TOKEN }}
           GITHUB_ORG:          ${{ secrets.ORG_NAME }}
           GOVERNANCE_REPO:     ${{ secrets.GOVERNANCE_REPO }}
           JIRA_URL:            ${{ secrets.JIRA_URL }}
@@ -194,7 +194,7 @@ jobs:
       - name: Enforce severity gate
         env:
           GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_MODELS_TOKEN: ${{ secrets.GITHUB_MODELS_TOKEN }}
+          GITHUB_MODELS_TOKEN: ${{ secrets.ORG_GITHUB_TOKEN }}
           GITHUB_ORG:          ${{ secrets.ORG_NAME }}
           GOVERNANCE_REPO:     ${{ secrets.GOVERNANCE_REPO }}
           JIRA_URL:            ${{ secrets.JIRA_URL }}
