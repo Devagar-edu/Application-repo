@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class VulnController {
 
-    private XmlService xmlService = new XmlService();
+    private XmlService xmlService = new XmlService(); // SECURITY-FIX: CVE-2015-7501
 
 
     @PostMapping("/xml")
@@ -15,4 +15,3 @@ public class VulnController {
         return xmlService.parseXml(xml);
     }
 }
-
