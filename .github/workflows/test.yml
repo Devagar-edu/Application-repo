@@ -87,7 +87,6 @@ jobs:
         id: sast
         run: |
           snyk code test \
-            --exclude=vuln-remediation \
             --json \
             --severity-threshold=low \
             > snyk-sast-raw.json 2>/dev/null || true
