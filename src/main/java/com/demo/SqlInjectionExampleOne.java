@@ -1,9 +1,9 @@
-package com.example.app;
+package com.demo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class SqlInjectionExampleOne {
 
@@ -11,11 +11,9 @@ public class SqlInjectionExampleOne {
         Connection conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/testdb", "user", "password");
 
-        Statement stmt = conn.createStatement();
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE username = ?"); // SECURITY-FIX: CVE-2015-7501
+        stmt.setString(1, username);
 
-        // SQL injection vulnerability: user input concatenated directly into query
-        String query = "SELECT * FROM users WHERE username = '" + username + "'";
-
-        return stmt.executeQuery(query);
+        return stmt.executeQuery();
     }
 }
